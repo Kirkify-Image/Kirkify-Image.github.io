@@ -97,8 +97,11 @@
             margin: 0 auto 40px auto;
         }
 
-        /* Upload Zone */
+        /* Upload Zone (Now a clickable link) */
         .upload-card {
+            display: block;
+            text-decoration: none;
+            color: var(--dark);
             background: var(--white);
             border: 3px dashed var(--secondary);
             border-radius: 24px;
@@ -132,6 +135,7 @@
         }
 
         .demo-btn {
+            display: inline-block;
             background-color: var(--dark);
             color: var(--white);
             border: none;
@@ -140,12 +144,11 @@
             font-size: 16px;
             font-weight: 800;
             font-family: 'Nunito', sans-serif;
-            cursor: pointer;
             margin-top: 20px;
             transition: background 0.3s;
         }
 
-        .demo-btn:hover {
+        .upload-card:hover .demo-btn {
             background-color: var(--primary);
         }
 
@@ -310,6 +313,7 @@
             font-size: 20px;
             margin-bottom: 20px;
             display: block;
+            text-decoration: none;
         }
 
         @media (max-width: 768px) {
@@ -324,7 +328,8 @@
     <header>
         <div class="container">
             <div class="top-tagline pixel-font">Tomodachi Life · Living The Dream</div>
-            <a href="#" class="logo pixel-font">✦ LIVING THE GRID ★</a>
+            <!-- 修改1：顶部 Logo 点击跳转到指定网址 -->
+            <a href="https://livingthegrid.app/" class="logo pixel-font">✦ LIVING THE GRID ★</a>
         </div>
     </header>
 
@@ -334,12 +339,13 @@
             <h1>Paint-by-numbers for<br>Palette House</h1>
             <p class="subtitle">Drop in any reference image and get a cleaner, hand-copyable pixel plan. Turn any image into a paintable pixel grid.</p>
             
-            <div class="upload-card">
+            <!-- 修改2：整个上传框变成了一个巨大的跳转链接 -->
+            <a href="https://livingthegrid.app/" class="upload-card">
                 <div class="upload-icon">↑</div>
                 <div class="upload-text">Upload any image to start</div>
                 <div class="file-types">PNG · JPG · GIF · stays on your device</div>
-                <button class="demo-btn">Try the demo smiley</button>
-            </div>
+                <span class="demo-btn">Try the demo smiley</span>
+            </a>
 
             <div class="privacy-badge">
                 🔒 Everything stays in your browser. No account required.
@@ -451,7 +457,8 @@
     </main>
 
     <footer>
-        <span class="footer-logo pixel-font">✦ LIVING THE GRID ★</span>
+        <!-- 修改3：底部的名字也变成了跳转链接 -->
+        <a href="https://livingthegrid.app/" class="footer-logo pixel-font">✦ LIVING THE GRID ★</a>
         <p>Light, playful, and by hand. A free pixel-art helper.</p>
         <p>Living The Grid is an independent fan project not affiliated with or endorsed by Nintendo.</p>
         <p>Tomodachi Life: Living the Dream is developed and published by Nintendo.</p>
